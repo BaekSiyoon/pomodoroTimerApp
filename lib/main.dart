@@ -14,6 +14,12 @@ class MyApp extends StatefulWidget {
 class _AppState extends State<MyApp> {
   int counter = 0;
 
+  void onClicked() {
+    setState(() {
+      counter = counter + 1;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,6 +41,13 @@ class _AppState extends State<MyApp> {
                   fontSize: 30,
                 ),
               ),
+              IconButton(
+                iconSize: 40,
+                onPressed: onClicked,
+                icon: const Icon(
+                  Icons.add_box_rounded,
+                ),
+              )
             ],
           ),
         ),
